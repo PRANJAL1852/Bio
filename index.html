@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+with animations and a tech-inspired aesthetic that aligns with your interests in coding and cricket:<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🌌 Pranjal Srivastava | Tech & Cricket Star 🌠</title>
+    <title>Pranjal Srivastava | A Journey in Code & Cricket</title>
     <style>
         * {
             margin: 0;
@@ -11,194 +11,206 @@
             box-sizing: border-box;
             font-family: 'Poppins', sans-serif;
         }
+
         body {
-            background: linear-gradient(45deg, #1e3a8a, #7dd3fc, #fef08a, #f472b6);
-            background-size: 400% 400%;
-            animation: gradientShift 15s ease infinite;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
             color: #fff;
-            overflow: hidden;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .container {
-            display: flex;
-            align-items: center;
-            max-width: 1200px;
-            padding: 2rem;
-            gap: 2rem;
-            background: rgba(0, 0, 0, 0.5);
-            border-radius: 30px;
-            box-shadow: 0 0 50px rgba(0, 255, 255, 0.5);
-            backdrop-filter: blur(10px);
-            animation: float 5s ease-in-out infinite;
-        }
-        .photo {
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            overflow: hidden;
-            border: 5px solid #facc15;
-            transition: transform 0.5s;
-        }
-        .photo:hover {
-            transform: scale(1.1) rotate(5deg);
-        }
-        .photo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .content {
-            max-width: 700px;
-        }
-        h1 {
-            font-size: 3.5rem;
-            color: #facc15;
-            text-shadow: 0 0 10px #facc15;
-            animation: glow 2s infinite alternate;
-        }
-        .tagline {
-            font-size: 1.5rem;
-            color: #a1c4fd;
-            margin: 0.5rem 0;
-        }
-        .bio {
-            font-size: 1.2rem;
-            line-height: 1.8;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 1rem;
-            border-radius: 15px;
-            margin-top: 1rem;
-            position: relative;
-        }
-        .bio::before {
-            content: '✨';
-            position: absolute;
-            top: -20px;
-            left: -20px;
-            font-size: 2rem;
-            animation: spin 3s linear infinite;
-        }
-        .bio::after {
-            content: '🌟';
-            position: absolute;
-            bottom: -20px;
-            right: -20px;
-            font-size: 2rem;
-            animation: spin 3s linear infinite reverse;
-        }
-        .highlight {
-            color: #fef08a;
-            font-weight: bold;
-        }
-        .emoji {
-            font-size: 1.5rem;
-            margin: 0 0.3rem;
-        }
-        .particle {
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            background: #fff;
-            border-radius: 50%;
-            animation: particles 5s infinite;
-            pointer-events: none;
+            line-height: 1.6;
+            overflow-x: hidden;
         }
 
-        /* Animations */
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
         }
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
+
+        header {
+            text-align: center;
+            padding: 60px 0;
+            animation: fadeInDown 1s ease;
         }
-        @keyframes glow {
-            0% { text-shadow: 0 0 10px #facc15, 0 0 20px #facc15; }
-            100% { text-shadow: 0 0 20px #facc15, 0 0 30px #facc15; }
+
+        header h1 {
+            font-size: 3.5em;
+            color: #00ddeb;
+            text-shadow: 0 0 10px rgba(0, 221, 235, 0.7);
         }
-        @keyframes spin {
-            100% { transform: rotate(360deg); }
+
+        header p {
+            font-size: 1.2em;
+            color: #b3e5fc;
         }
-        @keyframes particles {
-            0% { transform: translate(0, 0); opacity: 1; }
-            100% { transform: translate(var(--x), var(--y)); opacity: 0; }
+
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 20px auto;
+            display: block;
+            border: 5px solid #00ddeb;
+            box-shadow: 0 0 20px rgba(0, 221, 235, 0.5);
+            transition: transform 0.3s ease;
         }
+
+        .profile-img:hover {
+            transform: scale(1.1);
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 40px;
+            margin: 20px 0;
+            backdrop-filter: blur(10px);
+            animation: fadeInUp 1s ease;
+        }
+
+        h2 {
+            color: #00ddeb;
+            font-size: 2em;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #00ddeb;
+            display: inline-block;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 20px rgba(0, 221, 235, 0.3);
+        }
+
+        .fact-list {
+            list-style: none;
+        }
+
+        .fact-list li {
+            margin: 10px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .fact-list li:before {
+            content: "►";
+            color: #00ddeb;
+            position: absolute;
+            left: 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: #b3e5fc;
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
         @media (max-width: 768px) {
-            .container {
-                flex-direction: column;
-                padding: 1rem;
-            }
-            .photo { width: 200px; height: 200px; }
-            h1 { font-size: 2rem; }
-            .tagline { font-size: 1rem; }
-            .bio { font-size: 1rem; }
+            header h1 { font-size: 2.5em; }
+            .section { padding: 20px; }
+            .profile-img { width: 150px; height: 150px; }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="photo">
-            <img src="https://www.dropbox.com/scl/fi/lwrzhin72cr1mc0rkigrn/IMG-20240101-WA0075.jpg?rlkey=jdnuhn1d2ip7dfqb3qgu202qe&st=0jmkfxmn&dl=1" alt="Pranjal Srivastava">
-        </div>
-        <div class="content">
-            <h1>🌌 Pranjal Srivastava 🌠</h1>
-            <p class="tagline">13-Year-Old Tech Wizard & Cricket Prodigy 🩵</p>
-            <div class="bio">
-                <p>Hey, I’m <span class="highlight">Pranjal</span> from Delhi, India 🇮🇳—born on <em>Dec 31, 2011</em> under the winter sky ❄️.</p>
-                <p>I’m a 9th grader who’s crazy about <span class="highlight">coding</span> 💻, <span class="highlight">cricket</span> 🏏, and gaming 🎮 (Free Fire champ here!).</p>
-                <p>Love <span class="highlight">momos</span> 🍤, <span class="highlight">light blue</span> 🩵, and chilling with tunes like "Shayad" 🎶.</p>
-                <p>Dreaming big: Software engineer or cricketer—maybe both! 🚀 Want to visit Japan for its tech vibes 🇯🇵.</p>
-                <p>I’m shy until you know me, then I’m all extrovert vibes 😜. Multi-talented and proud of it! ✨</p>
+        <header>
+            <h1>Pranjal Srivastava</h1>
+            <p>Tech Enthusiast | Cricketer | Dreamer</p>
+            <img src="https://www.dropbox.com/scl/fi/lwrzhin72cr1mc0rkigrn/IMG-20240101-WA0075.jpg?rlkey=jdnuhn1d2ip7dfqb3qgu202qe&st=0jmkfxmn&dl=1" alt="Pranjal Srivastava" class="profile-img">
+        </header>
+
+        <div class="section">
+            <h2>About Me</h2>
+            <div class="grid">
+                <div class="card">
+                    <p>Hey there! I'm Pranjal, a 13-year-old from Delhi, India, born on December 31, 2011. I'm a 9th grader with a passion for coding, cricket, and music. I’m a bit shy with strangers but super outgoing with friends and family!</p>
+                </div>
+                <div class="card">
+                    <p>My biggest dreams? To become a software engineer, a cricketer—or maybe both! I love technology, gaming (Free Fire is my jam), and relaxing with a good nap. Oh, and I can’t live without my family—or myself!</p>
+                </div>
             </div>
         </div>
+
+        <div class="section">
+            <h2>Favorites & Fun Facts</h2>
+            <div class="grid">
+                <div class="card">
+                    <ul class="fact-list">
+                        <li><strong>Food:</strong> Momos & Butter Chicken with Naan</li>
+                        <li><strong>Color:</strong> Light Blue</li>
+                        <li><strong>Movie:</strong> Lagaan</li>
+                        <li><strong>Song:</strong> "Shayad" (depends on my mood)</li>
+                        <li><strong>Drink:</strong> Sprite</li>
+                        <li><strong>Dessert:</strong> Rasmalai</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <ul class="fact-list">
+                        <li><strong>Sport:</strong> Cricket</li>
+                        <li><strong>Subject:</strong> Maths</li>
+                        <li><strong>Season:</strong> Winter</li>
+                        <li><strong>Holiday:</strong> Diwali</li>
+                        <li><strong>Animal:</strong> Cat</li>
+                        <li><strong>App:</strong> YouTube</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>My World</h2>
+            <div class="grid">
+                <div class="card">
+                    <p><strong>Proudest Achievements:</strong> My cricket and coding skills!</p>
+                    <p><strong>Dream Destination:</strong> Japan (for its tech!)</p>
+                    <p><strong>Hidden Talents:</strong> Coding & smashing it at cricket</p>
+                </div>
+                <div class="card">
+                    <p><strong>Memorable Trip:</strong> Nepal with family</p>
+                    <p><strong>Skill to Learn:</strong> How to live life</p>
+                    <p><strong>World Change:</strong> Make people kinder</p>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Designed by Pranjal Srivastava | Powered by Passion & Code | © 2025</p>
+        </footer>
     </div>
 
     <script>
-        // Particle effect
-        function createParticle() {
-            const particle = document.createElement('div');
-            particle.className = 'particle';
-            const x = Math.random() * window.innerWidth;
-            const y = Math.random() * window.innerHeight;
-            particle.style.left = `${x}px`;
-            particle.style.top = `${y}px`;
-            particle.style.setProperty('--x', `${(Math.random() - 0.5) * 200}px`);
-            particle.style.setProperty('--y', `${(Math.random() - 0.5) * 200}px`);
-            document.body.appendChild(particle);
-            setTimeout(() => particle.remove(), 5000);
-        }
-        setInterval(createParticle, 200);
+        // Simple scroll animation trigger
+        const sections = document.querySelectorAll('.section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 1s ease forwards';
+                }
+            });
+        }, { threshold: 0.3 });
 
-        // Random color burst on click
-        document.body.addEventListener('click', (e) => {
-            const burst = document.createElement('div');
-            burst.style.position = 'absolute';
-            burst.style.width = '20px';
-            burst.style.height = '20px';
-            burst.style.background = `hsl(${Math.random() * 360}, 100%, 50%)`;
-            burst.style.borderRadius = '50%';
-            burst.style.left = `${e.clientX}px`;
-            burst.style.top = `${e.clientY}px`;
-            burst.style.transform = 'scale(0)';
-            burst.style.animation = 'burst 0.5s ease-out forwards';
-            document.body.appendChild(burst);
-            setTimeout(() => burst.remove(), 500);
-        });
-
-        // Burst animation
-        const styleSheet = document.createElement('style');
-        styleSheet.textContent = `
-            @keyframes burst {
-                0% { transform: scale(0); opacity: 1; }
-                100% { transform: scale(2); opacity: 0; }
-            }
-        `;
-        document.head.appendChild(styleSheet);
+        sections.forEach(section => observer.observe(section));
     </script>
 </body>
-    </html>
+</html>
