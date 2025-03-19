@@ -3,196 +3,196 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pranjal Srivastava - Personal Bio</title>
-    
-    <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    
+    <title>🌟 Pranjal Srivastava's Awesome Bio 🌟</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
         }
-
         body {
-            background-color: #f5f5f5;
+            background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
             color: #333;
-            scroll-behavior: smooth;
+            line-height: 1.6;
+            overflow-x: hidden;
         }
-
-        /* Navigation Bar */
-        header {
-            display: flex;
-            justify-content: space-between;
-            padding: 15px 50px;
-            background-color: #222;
-            color: white;
-            position: fixed;
-            width: 100%;
+        nav {
+            background: #6b7280;
+            padding: 1rem;
+            position: sticky;
             top: 0;
-            z-index: 1000;
+            z-index: 10;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
-
-        header .logo {
-            font-size: 22px;
-            font-weight: bold;
-        }
-
         nav ul {
             list-style: none;
             display: flex;
-        }
-
-        nav ul li {
-            margin: 0 15px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: white;
-            transition: 0.3s;
-        }
-
-        nav ul li a:hover {
-            color: #f39c12;
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
             justify-content: center;
-            background: linear-gradient(to right, #2193b0, #6dd5ed);
-            text-align: center;
-            color: white;
+            gap: 2rem;
         }
-
-        .hero .content h1 {
-            font-size: 40px;
-        }
-
-        .hero .content h1 span {
-            color: #f39c12;
-        }
-
-        .btn {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 10px 20px;
-            background-color: #f39c12;
+        nav a {
             color: white;
             text-decoration: none;
-            border-radius: 5px;
-            transition: 0.3s;
+            font-size: 1.2rem;
+            transition: color 0.3s;
         }
-
-        .btn:hover {
-            background-color: #e67e22;
+        nav a:hover {
+            color: #facc15;
         }
-
-        /* Sections */
-        .section {
-            padding: 60px;
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .header {
             text-align: center;
-            background: white;
-            margin: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 3rem 0;
+            background: url('https://www.dropbox.com/scl/fi/lwrzhin72cr1mc0rkigrn/IMG-20240101-WA0075.jpg?rlkey=jdnuhn1d2ip7dfqb3qgu202qe&st=0jmkfxmn&dl=1') no-repeat center/cover;
+            color: white;
+            text-shadow: 2px 2px 4px #000;
+            border-radius: 20px;
+            margin-bottom: 2rem;
         }
-
-        /* Footer */
+        .header h1 {
+            font-size: 3rem;
+            animation: bounce 2s infinite;
+        }
+        section {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            margin: 1rem 0;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        section:hover {
+            transform: scale(1.02);
+        }
+        h2 {
+            color: #1e40af;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        p {
+            font-size: 1.1rem;
+            margin: 0.5rem 0;
+        }
+        .emoji {
+            font-size: 1.5rem;
+            margin: 0 0.3rem;
+        }
+        .fun-fact {
+            background: #fef08a;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+            font-style: italic;
+        }
         footer {
             text-align: center;
-            padding: 20px;
-            background: #222;
+            padding: 2rem;
+            background: #4b5563;
             color: white;
+            margin-top: 2rem;
+            border-radius: 20px 20px 0 0;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-20px); }
+            60% { transform: translateY(-10px); }
+        }
+        @media (max-width: 768px) {
+            nav ul { flex-direction: column; text-align: center; }
+            .header h1 { font-size: 2rem; }
+            section { padding: 1rem; }
         }
     </style>
 </head>
 <body>
-
-    <!-- Navigation Bar -->
-    <header>
-        <div class="logo">Pranjal Srivastava</div>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="content">
-            <h1>Hello, I'm <span>Pranjal Srivastava</span></h1>
-            <p>Web Developer | Student | Tech Enthusiast</p>
-            <a href="#about" class="btn">Know More</a>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="section">
-        <h2>About Me</h2>
-        <p>I am Pranjal Srivastava, a student and passionate web developer from India. I love creating world-class projects and aspire to make an impact in technology.</p>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="section">
-        <h2>Skills</h2>
+    <nav>
         <ul>
-            <li>HTML, CSS, JavaScript</li>
-            <li>Web Development</li>
-            <li>Python & Java</li>
-            <li>Problem Solving</li>
+            <li><a href="#about">About Me 🌟</a></li>
+            <li><a href="#favorites">Favorites 🎉</a></li>
+            <li><a href="#dreams">Dreams 🚀</a></li>
+            <li><a href="#fun">Fun Stuff 🎮</a></li>
         </ul>
-    </section>
+    </nav>
 
-    <!-- Projects Section -->
-    <section id="projects" class="section">
-        <h2>Projects</h2>
-        <div class="project">
-            <h3>The Journey of Indian Technology</h3>
-            <p>A world-class web project highlighting India's technological advancements.</p>
+    <div class="container">
+        <div class="header">
+            <h1>🌟 Pranjal Srivastava 🌟</h1>
+            <p>Tech Enthusiast | Cricketer | 13-Year-Old Wonder ✨</p>
         </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section">
-        <h2>Contact Me</h2>
-        <p>Email: pranjal@example.com</p>
-        <p>Phone: +91 12345 67890</p>
-    </section>
+        <section id="about">
+            <h2>👋 About Me</h2>
+            <p>Hey there! I’m <strong>Pranjal Srivastava</strong>, born on <em>December 31, 2011</em> in Delhi, India 🇮🇳.</p>
+            <p>I’m in 9th grade and live in Delhi, where I spend my days coding, playing cricket, and listening to music 🎶.</p>
+            <p>I’m a single child—no siblings to bug me! I’m super proud of my cricket and coding skills 🏏💻.</p>
+            <p class="fun-fact">Fun Fact: I’m multi-talented! 😅</p>
+        </section>
 
-    <!-- Footer -->
+        <section id="favorites">
+            <h2>🎉 My Favorites</h2>
+            <p><span class="emoji">🍲</span> <strong>Food:</strong> Momos & Butter Chicken with Butter Naan 🧈</p>
+            <p><span class="emoji">🎨</span> <strong>Color:</strong> Light Blue 🩵</p>
+            <p><span class="emoji">🎬</span> <strong>Movie:</strong> Lagaan</p>
+            <p><span class="emoji">📚</span> <strong>Subject:</strong> Maths ➕</p>
+            <p><span class="emoji">🎵</span> <strong>Song:</strong> "Shayad" (depends on my mood!)</p>
+            <p><span class="emoji">❄️</span> <strong>Season:</strong> Winter—it’s beautiful & I was born in it! 🩵</p>
+            <p><span class="emoji">🏏</span> <strong>Sport:</strong> Cricket</p>
+            <p><span class="emoji">🥤</span> <strong>Drink:</strong> Sprite</p>
+            <p><span class="emoji">🍮</span> <strong>Dessert:</strong> Rasmalai</p>
+            <p><span class="emoji">🐾</span> <strong>Animal:</strong> Cat 😺</p>
+            <p><span class="emoji">🎆</span> <strong>Holiday:</strong> Diwali 🪔</p>
+        </section>
+
+        <section id="dreams">
+            <h2>🚀 My Dreams</h2>
+            <p>I dream of being a <strong>software engineer</strong> or a <strong>cricketer</strong>—maybe both! 🌟</p>
+            <p>I’d love to visit <strong>Japan</strong> for its awesome tech 🇯🇵.</p>
+            <p>One big thing I want to learn? <em>How to live life!</em> 😄</p>
+            <p>If I could change the world, I’d fix <strong>people</strong>—make everyone kinder! 💙</p>
+        </section>
+
+        <section id="fun">
+            <h2>🎮 Fun Stuff</h2>
+            <p>I’m a shy guy until you know me—then I’m super extroverted! 😜</p>
+            <p>I’m addicted to gaming—my fave is <strong>Free Fire</strong>. I’m one of the best gamers out there! 🎮</p>
+            <p><strong>YouTube</strong> is my go-to app—you can find EVERYTHING there! 📺</p>
+            <p>I love chilling by <strong>sleeping</strong> 💤 and hanging out with my family 👨‍👩‍👦.</p>
+            <p>I’m a planner—love organizing stuff! 📅</p>
+            <p>My style? <strong>T-shirt & jeans</strong>—simple and cool! 👕👖</p>
+            <p>Oh, and I totally believe in superstitions—they’re real! ✨</p>
+        </section>
+    </div>
+
     <footer>
-        <p>&copy; 2025 Pranjal Srivastava. All rights reserved.</p>
+        <p>💻 Made with ❤️ by Pranjal Srivastava | Tech Enthusiast Extraordinaire! 🩵</p>
     </footer>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const links = document.querySelectorAll("nav ul li a");
+        // Add some interactivity!
+        const sections = document.querySelectorAll('section');
+        sections.forEach(section => {
+            section.addEventListener('click', () => {
+                section.style.background = `rgba(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255}, 0.9)`;
+                setTimeout(() => {
+                    section.style.background = 'rgba(255, 255, 255, 0.9)';
+                }, 1000);
+            });
+        });
 
-            links.forEach(link => {
-                link.addEventListener("click", function(e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute("href").substring(1);
-                    const targetSection = document.getElementById(targetId);
-
-                    window.scrollTo({
-                        top: targetSection.offsetTop - 50,
-                        behavior: "smooth"
-                    });
-                });
+        // Scroll animation for navigation
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const section = document.querySelector(this.getAttribute('href'));
+                section.scrollIntoView({ behavior: 'smooth' });
             });
         });
     </script>
-
 </body>
-          </html>
+    </html>
