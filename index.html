@@ -122,22 +122,23 @@
             100% { border-color: rgba(0, 221, 235, 1); }
         }
 
-        /* Cricket Animation */
+        /* Cricket Ball */
         .cricket-ball {
             position: absolute;
             width: 20px;
             height: 20px;
-            background: #fff;
+            background: radial-gradient(circle, #fff 30%, #d32f2f 70%);
             border-radius: 50%;
             top: 50%;
             left: -30px;
+            box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
             animation: bowl 4s infinite ease-in-out;
         }
 
         @keyframes bowl {
-            0% { transform: translateX(0); }
+            0% { transform: translateX(0) rotate(0deg); }
             50% { transform: translateX(1200px) rotate(720deg); }
-            100% { transform: translateX(0); }
+            100% { transform: translateX(0) rotate(0deg); }
         }
 
         .section {
@@ -195,17 +196,6 @@
             color: #00ddeb;
             position: absolute;
             left: 0;
-        }
-
-        /* Music Player */
-        .music-player {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: rgba(0, 221, 235, 0.2);
-            padding: 10px;
-            border-radius: 10px;
-            z-index: 10;
         }
 
         /* Gaming Popup */
@@ -272,7 +262,7 @@
             header h1 { font-size: 2.2em; }
             .profile-container { margin: 0 auto 20px; }
             .section { padding: 20px; }
-            .music-player, .gaming-btn { bottom: 80px; }
+            .gaming-btn { bottom: 20px; }
         }
     </style>
 </head>
@@ -345,20 +335,12 @@
             </div>
         </div>
 
-        <div class="music-player">
-            <audio controls>
-                <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3">
-                Your browser does not support the audio element.
-            </audio>
-            <p>"Shayad" (Sample)</p>
-        </div>
-
         <button class="gaming-btn">Gaming Stats</button>
         <div class="gaming-popup">
             <h3>Free Fire Stats</h3>
-            <p>Rank: Top 1% (Self-Proclaimed!)</p>
+            <p>Rank: Heroic</p>
             <p>Kills: 1000+</p>
-            <p>Favorite Mode: Battle Royale</p>
+            <p>Favorite Mode: CS Ranked</p>
             <button onclick="document.querySelector('.gaming-popup').classList.remove('active')">Close</button>
         </div>
 
