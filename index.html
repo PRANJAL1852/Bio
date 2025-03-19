@@ -51,18 +51,43 @@
             font-style: italic;
         }
 
-        .profile-img {
+        .profile-container {
+            position: relative;
             width: 180px;
             height: 180px;
-            border-radius: 15px;
             margin-right: 40px;
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Prevents stretching/distortion */
+            border-radius: 15px;
             display: block;
-            box-shadow: 0 0 15px rgba(0, 221, 235, 0.3);
             transition: transform 0.3s ease;
         }
 
         .profile-img:hover {
             transform: scale(1.05);
+        }
+
+        .frame {
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            border: 5px solid;
+            border-radius: 20px;
+            animation: rgbShift 5s infinite linear;
+            pointer-events: none; /* Ensures frame doesn’t block hover */
+        }
+
+        @keyframes rgbShift {
+            0% { border-color: rgba(0, 221, 235, 1); }
+            33% { border-color: rgba(0, 153, 255, 1); }
+            66% { border-color: rgba(0, 191, 255, 1); }
+            100% { border-color: rgba(0, 221, 235, 1); }
         }
 
         .section {
@@ -137,7 +162,7 @@
             header { flex-direction: column; text-align: center; padding: 20px; }
             .header-text { padding: 20px 0; }
             header h1 { font-size: 2.2em; }
-            .profile-img { margin: 0 auto 20px; width: 140px; height: 140px; }
+            .profile-container { margin: 0 auto 20px; }
             .section { padding: 20px; }
         }
     </style>
@@ -145,7 +170,10 @@
 <body>
     <div class="container">
         <header>
-            <img src="https://www.dropbox.com/scl/fi/lwrzhin72cr1mc0rkigrn/IMG-20240101-WA0075.jpg?rlkey=jdnuhn1d2ip7dfqb3qgu202qe&st=0jmkfxmn&dl=1" alt="Pranjal Srivastava" class="profile-img">
+            <div class="profile-container">
+                <img src="https://www.dropbox.com/scl/fi/lwrzhin72cr1mc0rkigrn/IMG-20240101-WA0075.jpg?rlkey=jdnuhn1d2ip7dfqb3qgu202qe&st=0jmkfxmn&dl=1" alt="Pranjal Srivastava" class="profile-img">
+                <div class="frame"></div>
+            </div>
             <div class="header-text">
                 <h1>Pranjal Srivastava</h1>
                 <p>Living the Code & Cricket Dream</p>
