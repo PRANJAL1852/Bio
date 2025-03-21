@@ -3,280 +3,303 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pranjal Srivastava | Code, Cricket, Life</title>
+    <title>Pranjal Srivastava | Code, Cricket, Cosmos</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Orbitron', sans-serif;
         }
 
         body {
-            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            background: #000;
             color: #fff;
-            line-height: 1.6;
             overflow-x: hidden;
             position: relative;
+            min-height: 100vh;
         }
 
-        #particles {
+        /* Dynamic Background */
+        .cosmic-bg {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            pointer-events: none;
+            background: radial-gradient(circle at center, #1e0033, #0d001a);
+            z-index: -2;
+            animation: cosmicPulse 15s infinite alternate;
+        }
+
+        @keyframes cosmicPulse {
+            0% { filter: brightness(1); }
+            100% { filter: brightness(1.5); }
+        }
+
+        /* Neon Particles */
+        .neon-particles {
+            position: fixed;
+            width: 100%;
+            height: 100%;
             z-index: -1;
         }
 
         .particle {
             position: absolute;
-            background: rgba(0, 221, 235, 0.7);
+            background: linear-gradient(45deg, #ff00ff, #00ffff);
             border-radius: 50%;
-            animation: float 10s infinite ease-in-out;
+            box-shadow: 0 0 15px currentColor;
+            animation: drift 12s infinite ease-in-out;
         }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0); opacity: 0.5; }
-            50% { transform: translateY(-20vh); opacity: 1; }
+        @keyframes drift {
+            0% { transform: translate(0, 0); opacity: 0.8; }
+            50% { transform: translate(var(--x), var(--y)); opacity: 1; }
+            100% { transform: translate(0, 0); opacity: 0.8; }
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1300px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 30px;
             position: relative;
             z-index: 1;
         }
 
+        /* Header */
         header {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 40px 0;
-            background: rgba(0, 221, 235, 0.1);
-            border-radius: 0 0 20px 20px;
-            animation: fadeInDown 1s ease;
-            position: relative;
+            padding: 50px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 25px;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 0 40px rgba(255, 0, 255, 0.3);
+            position: sticky;
+            top: 20px;
+            z-index: 10;
+            animation: neonGlow 2s infinite alternate;
         }
 
-        .header-text {
-            padding-left: 40px;
-        }
-
-        header h1 {
-            font-size: 3em;
-            color: #00ddeb;
-            text-shadow: 0 0 10px rgba(0, 221, 235, 0.7);
-        }
-
-        header p {
-            font-size: 1.1em;
-            color: #b3e5fc;
-            font-style: italic;
-            transition: transform 0.3s ease, color 0.3s ease;
-        }
-
-        header:hover p {
-            transform: translateX(10px);
-            color: #00ddeb;
+        @keyframes neonGlow {
+            0% { box-shadow: 0 0 20px #ff00ff, 0 0 40px #00ffff; }
+            100% { box-shadow: 0 0 30px #00ffff, 0 0 60px #ff00ff; }
         }
 
         .profile-container {
             position: relative;
-            width: 180px;
-            height: 180px;
-            margin-right: 40px;
+            width: 200px;
+            height: 200px;
+            transform-style: preserve-3d;
+            transition: transform 0.5s ease;
+        }
+
+        .profile-container:hover {
+            transform: rotateY(20deg) rotateX(10deg);
         }
 
         .profile-img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 15px;
-            display: block;
-            transition: transform 0.3s ease;
-        }
-
-        .profile-img:hover {
-            transform: scale(1.05);
-        }
-
-        .frame {
-            position: absolute;
-            top: -10px;
-            left: -10px;
-            right: -10px;
-            bottom: -10px;
-            border: 5px solid;
             border-radius: 20px;
-            animation: rgbShift 5s infinite linear;
-            pointer-events: none;
+            box-shadow: 0 0 20px #ff00ff;
         }
 
-        @keyframes rgbShift {
-            0% { border-color: rgba(0, 221, 235, 1); }
-            33% { border-color: rgba(0, 153, 255, 1); }
-            66% { border-color: rgba(0, 191, 255, 1); }
-            100% { border-color: rgba(0, 221, 235, 1); }
+        .header-text h1 {
+            font-size: 3.5em;
+            background: linear-gradient(90deg, #ff00ff, #00ffff, #ffcc00);
+            -webkit-background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
         }
 
-        /* Cricket Ball */
+        .header-text p {
+            font-size: 1.3em;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: flicker 3s infinite;
+        }
+
+        @keyframes flicker {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        /* Cricket Ball Animation */
         .cricket-ball {
             position: absolute;
-            width: 20px;
-            height: 20px;
-            background: radial-gradient(circle, #fff 30%, #d32f2f 70%);
+            width: 25px;
+            height: 25px;
+            background: radial-gradient(circle, #fff 20%, #ff4444 80%);
             border-radius: 50%;
-            top: 50%;
-            left: -30px;
-            box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
-            animation: bowl 4s infinite ease-in-out;
+            box-shadow: 0 0 10px #fff;
+            animation: spinBowl 3s infinite linear;
         }
 
-        @keyframes bowl {
-            0% { transform: translateX(0) rotate(0deg); }
-            50% { transform: translateX(1200px) rotate(720deg); }
-            100% { transform: translateX(0) rotate(0deg); }
+        @keyframes spinBowl {
+            0% { transform: translateX(-100vw) rotate(0deg); }
+            100% { transform: translateX(100vw) rotate(1080deg); }
         }
 
+        /* Sections */
         .section {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
             padding: 40px;
-            margin: 20px 0;
+            margin: 30px 0;
             backdrop-filter: blur(10px);
-            animation: fadeInUp 1s ease;
-            transition: box-shadow 0.3s ease;
+            box-shadow: 0 0 50px rgba(0, 255, 255, 0.2);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
         }
 
         .section:hover {
-            box-shadow: 0 0 30px rgba(0, 221, 235, 0.5);
+            transform: scale(1.02);
+            box-shadow: 0 0 70px rgba(255, 0, 255, 0.4);
         }
 
         h2 {
-            color: #00ddeb;
-            font-size: 2em;
+            font-size: 2.5em;
+            background: linear-gradient(45deg, #ffcc00, #ff00ff);
+            -webkit-background-clip: text;
+            color: transparent;
             margin-bottom: 20px;
-            border-bottom: 2px solid #00ddeb;
-            display: inline-block;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 50%;
+            height: 3px;
+            background: linear-gradient(90deg, #00ffff, #ff00ff);
+            animation: expand 2s infinite;
+        }
+
+        @keyframes expand {
+            0% { width: 0; }
+            50% { width: 50%; }
+            100% { width: 0; }
         }
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
         }
 
         .card {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 10px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: linear-gradient(135deg, rgba(255, 0, 255, 0.1), rgba(0, 255, 255, 0.1));
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
         }
 
         .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 0 20px rgba(0, 221, 235, 0.3);
-        }
-
-        .fact-list {
-            list-style: none;
+            background: linear-gradient(135deg, rgba(255, 0, 255, 0.3), rgba(0, 255, 255, 0.3));
+            transform: translateY(-15px);
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
         }
 
         .fact-list li {
-            margin: 10px 0;
-            padding-left: 20px;
+            margin: 15px 0;
+            font-size: 1.1em;
+            color: #fff;
             position: relative;
+            padding-left: 25px;
         }
 
-        .fact-list li:before {
-            content: "►";
-            color: #00ddeb;
+        .fact-list li::before {
+            content: "✨";
             position: absolute;
             left: 0;
+            color: #ffcc00;
         }
 
         /* Gaming Popup */
+        .gaming-btn {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            background: linear-gradient(45deg, #ff00ff, #00ffff);
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            color: #000;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 10;
+            transition: transform 0.3s ease;
+        }
+
+        .gaming-btn:hover {
+            transform: scale(1.1);
+        }
+
         .gaming-popup {
             position: fixed;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%) scale(0);
-            background: rgba(0, 0, 0, 0.9);
-            padding: 20px;
-            border-radius: 15px;
-            color: #00ddeb;
+            background: rgba(0, 0, 0, 0.95);
+            padding: 30px;
+            border-radius: 20px;
+            color: #fff;
             z-index: 20;
-            transition: transform 0.3s ease;
+            transition: transform 0.4s ease;
+            box-shadow: 0 0 50px rgba(0, 255, 255, 0.5);
         }
 
         .gaming-popup.active {
             transform: translate(-50%, -50%) scale(1);
         }
 
-        .gaming-btn {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            background: #00ddeb;
-            color: #0f0c29;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            z-index: 10;
+        .gaming-popup h3 {
+            background: linear-gradient(90deg, #ffcc00, #ff00ff);
+            -webkit-background-clip: text;
+            color: transparent;
         }
 
+        /* Footer */
         footer {
             text-align: center;
-            padding: 40px 0;
-            color: #b3e5fc;
-            position: relative;
+            padding: 50px 0;
+            color: #fff;
+            background: rgba(0, 0, 0, 0.8);
+            border-top: 2px solid #00ffff;
         }
 
         .social-links a {
-            color: #00ddeb;
-            text-decoration: none;
-            transition: transform 0.3s ease;
+            color: #00ffff;
+            margin: 0 15px;
+            font-size: 1.2em;
+            transition: all 0.3s ease;
         }
 
         .social-links a:hover {
-            transform: scale(1.2);
-        }
-
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-50px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(50px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @media (max-width: 768px) {
-            header { flex-direction: column; text-align: center; padding: 20px; }
-            .header-text { padding: 20px 0; }
-            header h1 { font-size: 2.2em; }
-            .profile-container { margin: 0 auto 20px; }
-            .section { padding: 20px; }
-            .gaming-btn { bottom: 20px; }
+            color: #ff00ff;
+            transform: scale(1.3);
         }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div id="particles"></div>
+    <div class="cosmic-bg"></div>
+    <div class="neon-particles"></div>
     <div class="container">
         <header>
             <div class="profile-container">
                 <img src="https://www.dropbox.com/scl/fi/lwrzhin72cr1mc0rkigrn/IMG-20240101-WA0075.jpg?rlkey=jdnuhn1d2ip7dfqb3qgu202qe&st=0jmkfxmn&dl=1" alt="Pranjal Srivastava" class="profile-img">
-                <div class="frame"></div>
             </div>
             <div class="header-text">
                 <h1>Pranjal Srivastava</h1>
-                <p>Living the Code & Cricket Dream</p>
+                <p>Code | Cricket | Cosmos</p>
             </div>
             <div class="cricket-ball"></div>
         </header>
@@ -285,10 +308,10 @@
             <h2>About Me</h2>
             <div class="grid">
                 <div class="card">
-                    <p>Hey there! I'm Pranjal, a 13-year-old from Delhi, India, born on December 31, 2011. I'm a 9th grader with a passion for coding, cricket, and music. I’m a bit shy with strangers but super outgoing with friends and family!</p>
+                    <p>Hey, I’m Pranjal, a 13-year-old tech wizard and cricket enthusiast from Delhi, India. Born on December 31, 2011, I’m a 9th grader obsessed with coding, gaming, and smashing boundaries—both in code and on the field!</p>
                 </div>
                 <div class="card">
-                    <p>My biggest dreams? To become a software engineer, a cricketer—or maybe both! I love technology, gaming (Free Fire is my jam), and relaxing with a good nap. Oh, and I can’t live without my family—or myself!</p>
+                    <p>Dreaming big: I want to be a software engineer, a pro cricketer, or maybe a hybrid of both. I live for Free Fire, music, and chilling with family. Life’s a game—let’s play it loud!</p>
                 </div>
             </div>
         </div>
@@ -298,10 +321,10 @@
             <div class="grid">
                 <div class="card">
                     <ul class="fact-list">
-                        <li><strong>Food:</strong> Momos & Butter Chicken with Naan</li>
-                        <li><strong>Color:</strong> Light Blue</li>
+                        <li><strong>Food:</strong> Momos & Butter Chicken</li>
+                        <li><strong>Color:</strong> Neon Blue</li>
                         <li><strong>Movie:</strong> Lagaan</li>
-                        <li><strong>Song:</strong> "Shayad" (depends on my mood)</li>
+                        <li><strong>Song:</strong> "Shayad" (mood-driven)</li>
                         <li><strong>Drink:</strong> Sprite</li>
                         <li><strong>Dessert:</strong> Rasmalai</li>
                     </ul>
@@ -320,17 +343,17 @@
         </div>
 
         <div class="section">
-            <h2>My World</h2>
+            <h2>My Universe</h2>
             <div class="grid">
                 <div class="card">
-                    <p><strong>Proudest Achievements:</strong> My cricket and coding skills!</p>
-                    <p><strong>Dream Destination:</strong> Japan (for its tech!)</p>
-                    <p><strong>Hidden Talents:</strong> Coding & smashing it at cricket</p>
+                    <p><strong>Proudest Wins:</strong> Coding projects & cricket shots</p>
+                    <p><strong>Dream Spot:</strong> Japan (tech heaven!)</p>
+                    <p><strong>Secret Skills:</strong> Code mastery & cricket flair</p>
                 </div>
                 <div class="card">
-                    <p><strong>Memorable Trip:</strong> Nepal with family</p>
-                    <p><strong>Skill to Learn:</strong> How to live life</p>
-                    <p><strong>World Change:</strong> Make people kinder</p>
+                    <p><strong>Epic Memory:</strong> Nepal family adventure</p>
+                    <p><strong>Next Goal:</strong> Master life’s cheat codes</p>
+                    <p><strong>Big Vision:</strong> A kinder, cooler world</p>
                 </div>
             </div>
         </div>
@@ -345,7 +368,7 @@
         </div>
 
         <footer>
-            <p>Designed by Pranjal Srivastava | Powered by Passion & Code | © 2025</p>
+            <p>Crafted by Pranjal Srivastava | Fueled by Code & Dreams | © 2025</p>
             <div class="social-links">
                 <a href="https://www.instagram.com/pranjal_srivastava143?igsh=MTljZ3IxNmd5Z3U3dw==" target="_blank">Instagram</a>
             </div>
@@ -353,34 +376,34 @@
     </div>
 
     <script>
-        // Particle Background
-        const particleContainer = document.getElementById('particles');
-        for (let i = 0; i < 20; i++) {
+        // Neon Particles
+        const particleContainer = document.querySelector('.neon-particles');
+        for (let i = 0; i < 25; i++) {
             const particle = document.createElement('div');
             particle.classList.add('particle');
-            particle.style.width = `${Math.random() * 5 + 2}px`;
+            particle.style.width = `${Math.random() * 6 + 3}px`;
             particle.style.height = particle.style.width;
             particle.style.left = `${Math.random() * 100}vw`;
             particle.style.top = `${Math.random() * 100}vh`;
             particle.style.animationDelay = `${Math.random() * 5}s`;
+            particle.style.setProperty('--x', `${(Math.random() - 0.5) * 200}px`);
+            particle.style.setProperty('--y', `${(Math.random() - 0.5) * 200}px`);
             particleContainer.appendChild(particle);
         }
-
-        // Scroll Animation
-        const sections = document.querySelectorAll('.section');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.animation = 'fadeInUp 1s ease forwards';
-                }
-            });
-        }, { threshold: 0.3 });
-        sections.forEach(section => observer.observe(section));
 
         // Gaming Popup Toggle
         document.querySelector('.gaming-btn').addEventListener('click', () => {
             document.querySelector('.gaming-popup').classList.add('active');
         });
+
+        // Cricket Ball Random Spawn
+        setInterval(() => {
+            const ball = document.createElement('div');
+            ball.classList.add('cricket-ball');
+            ball.style.top = `${Math.random() * 80 + 10}vh`;
+            document.querySelector('.container').appendChild(ball);
+            setTimeout(() => ball.remove(), 3000);
+        }, 2000);
     </script>
 </body>
-</html>
+    </html>
