@@ -20,7 +20,6 @@
             min-height: 100vh;
         }
 
-        /* Background */
         .cosmic-bg {
             position: fixed;
             top: 0;
@@ -39,7 +38,6 @@
             z-index: 1;
         }
 
-        /* Header with Static Glow */
         header {
             display: flex;
             align-items: center;
@@ -107,7 +105,6 @@
             letter-spacing: 2px;
         }
 
-        /* Sections */
         .section {
             background: rgba(255, 255, 255, 0.08);
             border-radius: 15px;
@@ -164,7 +161,6 @@
             color: #ffcc00;
         }
 
-        /* Skills Section */
         .skills-grid {
             display: flex;
             flex-wrap: wrap;
@@ -185,7 +181,7 @@
             background: rgba(0, 255, 255, 0.3);
         }
 
-        /* Holo-Timeline */
+        /* Holo-Timeline (Original Design) */
         .holo-timeline {
             position: relative;
             padding: 20px 0;
@@ -248,7 +244,7 @@
             left: -10px;
         }
 
-        /* Gaming Stats Button */
+        /* Gaming Stats Dropdown */
         .gaming-btn {
             position: fixed;
             bottom: 40px;
@@ -267,6 +263,23 @@
 
         .gaming-btn:hover {
             transform: scale(1.1);
+        }
+
+        .gaming-stats {
+            position: fixed;
+            bottom: 90px;
+            left: 40px;
+            background: rgba(0, 0, 0, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            color: #fff;
+            z-index: 10;
+            display: none;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+        }
+
+        .gaming-stats.active {
+            display: block;
         }
 
         /* Footer */
@@ -380,16 +393,20 @@
                     <p>Born on December 31 in Delhi, India—ready to conquer the world!</p>
                 </div>
                 <div class="timeline-item">
-                    <h3>2018</h3>
-                    <p>Discovered my love for cricket and started swinging the bat.</p>
+                    <h3>2021</h3>
+                    <p>Started my Free Fire journey—hit Heroic rank later!</p>
                 </div>
                 <div class="timeline-item">
-                    <h3>2020</h3>
+                    <h3>2022</h3>
                     <p>Dived into coding—HTML became my first language!</p>
                 </div>
                 <div class="timeline-item">
                     <h3>2023</h3>
-                    <p>Hit Heroic rank in Free Fire—1000+ kills and counting!</p>
+                    <p>Epic Nepal family trip—unforgettable memories!</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>2024</h3>
+                    <p>Discovered my love for cricket—swinging the bat like a pro!</p>
                 </div>
                 <div class="timeline-item">
                     <h3>2025</h3>
@@ -398,7 +415,12 @@
             </div>
         </div>
 
-        <button class="gaming-btn">Free Fire Stats: Heroic | 1000+ Kills | CS Ranked</button>
+        <button class="gaming-btn" onclick="toggleStats()">Gaming Stats</button>
+        <div class="gaming-stats" id="stats">
+            <p>Rank: Heroic</p>
+            <p>Kills: 1000+</p>
+            <p>Favorite Mode: CS Ranked</p>
+        </div>
 
         <footer>
             <p>Crafted by Pranjal Srivastava | Fueled by Code & Dreams | © 2025</p>
@@ -407,5 +429,12 @@
             </div>
         </footer>
     </div>
+
+    <script>
+        function toggleStats() {
+            const stats = document.getElementById('stats');
+            stats.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
