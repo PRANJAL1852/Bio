@@ -31,29 +31,6 @@
             z-index: -2;
         }
 
-        /* Neon Particles (Optimized) */
-        .neon-particles {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
-
-        .particle {
-            position: absolute;
-            background: linear-gradient(45deg, #ff00ff, #00ffff);
-            border-radius: 50%;
-            box-shadow: 0 0 10px currentColor;
-            animation: drift 10s infinite ease-in-out;
-            will-change: transform, opacity;
-        }
-
-        @keyframes drift {
-            0% { transform: translate(0, 0); opacity: 0.6; }
-            50% { transform: translate(var(--x), var(--y)); opacity: 0.9; }
-            100% { transform: translate(0, 0); opacity: 0.6; }
-        }
-
         .container {
             max-width: 1300px;
             margin: 0 auto;
@@ -62,7 +39,7 @@
             z-index: 1;
         }
 
-        /* Header */
+        /* Header with Static Glow */
         header {
             display: flex;
             align-items: center;
@@ -71,7 +48,7 @@
             background: rgba(255, 255, 255, 0.05);
             border-radius: 20px;
             backdrop-filter: blur(10px);
-            box-shadow: 0 0 30px rgba(255, 0, 255, 0.2);
+            box-shadow: 0 0 20px rgba(255, 0, 255, 0.4), 0 0 40px rgba(0, 255, 255, 0.3);
             position: sticky;
             top: 20px;
             z-index: 10;
@@ -96,6 +73,25 @@
             box-shadow: 0 0 15px #ff00ff;
         }
 
+        .frame {
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            border: 5px solid;
+            border-radius: 20px;
+            animation: rgbShift 4s infinite linear;
+            pointer-events: none;
+        }
+
+        @keyframes rgbShift {
+            0% { border-color: #ff00ff; }
+            33% { border-color: #00ffff; }
+            66% { border-color: #ffcc00; }
+            100% { border-color: #ff00ff; }
+        }
+
         .header-text h1 {
             font-size: 3em;
             background: linear-gradient(90deg, #ff00ff, #00ffff, #ffcc00);
@@ -109,23 +105,6 @@
             color: #fff;
             text-transform: uppercase;
             letter-spacing: 2px;
-        }
-
-        /* Cricket Ball (Optimized) */
-        .cricket-ball {
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background: radial-gradient(circle, #fff 20%, #ff4444 80%);
-            border-radius: 50%;
-            box-shadow: 0 0 8px #fff;
-            animation: spinBowl 4s infinite linear;
-            will-change: transform;
-        }
-
-        @keyframes spinBowl {
-            0% { transform: translateX(-100vw) rotate(0deg); }
-            100% { transform: translateX(100vw) rotate(720deg); }
         }
 
         /* Sections */
@@ -198,8 +177,6 @@
             border-radius: 10px;
             color: #fff;
             font-size: 1.1em;
-            position: relative;
-            overflow: hidden;
             transition: transform 0.3s ease;
         }
 
@@ -208,41 +185,88 @@
             background: rgba(0, 255, 255, 0.3);
         }
 
-        .skill-card::before {
+        /* Holo-Timeline */
+        .holo-timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .timeline-line {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(to bottom, #ff00ff, #00ffff);
+            transform: translateX(-50%);
+            z-index: 0;
+        }
+
+        .timeline-item {
+            position: relative;
+            width: 50%;
+            padding: 20px;
+            margin: 20px 0;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            text-align: left;
+        }
+
+        .timeline-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+        }
+
+        .timeline-item::before {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent);
-            animation: ripple 3s infinite;
+            top: 50%;
+            width: 20px;
+            height: 20px;
+            background: #ffcc00;
+            border-radius: 50%;
+            z-index: 1;
+            transform: translateY(-50%);
         }
 
-        @keyframes ripple {
-            0% { transform: scale(0); opacity: 1; }
-            100% { transform: scale(2); opacity: 0; }
+        .timeline-item:nth-child(odd)::before {
+            right: -10px;
         }
 
-        /* Gaming Stats */
-        .gaming-stats {
+        .timeline-item:nth-child(even)::before {
+            left: -10px;
+        }
+
+        /* Gaming Stats Button */
+        .gaming-btn {
             position: fixed;
             bottom: 40px;
             left: 40px;
-            background: rgba(0, 0, 0, 0.9);
-            padding: 20px;
-            border-radius: 15px;
-            color: #fff;
-            z-index: 10;
-            box-shadow: 0 0 30px rgba(0, 255, 255, 0.4);
+            background: linear-gradient(45deg, #ff00ff, #00ffff);
+            padding: 15px 25px;
+            border: none;
+            border-radius: 10px;
+            color: #000;
+            font-weight: bold;
             font-size: 1.2em;
+            cursor: pointer;
+            z-index: 10;
+            transition: transform 0.3s ease;
         }
 
-        .gaming-stats h3 {
-            background: linear-gradient(90deg, #ffcc00, #ff00ff);
-            -webkit-background-clip: text;
-            color: transparent;
-            margin-bottom: 10px;
+        .gaming-btn:hover {
+            transform: scale(1.1);
         }
 
         /* Footer */
@@ -270,17 +294,16 @@
 </head>
 <body>
     <div class="cosmic-bg"></div>
-    <div class="neon-particles"></div>
     <div class="container">
         <header>
             <div class="profile-container">
                 <img src="https://www.dropbox.com/scl/fi/lwrzhin72cr1mc0rkigrn/IMG-20240101-WA0075.jpg?rlkey=jdnuhn1d2ip7dfqb3qgu202qe&st=0jmkfxmn&dl=1" alt="Pranjal Srivastava" class="profile-img">
+                <div class="frame"></div>
             </div>
             <div class="header-text">
                 <h1>Pranjal Srivastava</h1>
                 <p>Code | Cricket | Vibes</p>
             </div>
-            <div class="cricket-ball"></div>
         </header>
 
         <div class="section">
@@ -348,12 +371,34 @@
             </div>
         </div>
 
-        <div class="gaming-stats">
-            <h3>Free Fire Stats</h3>
-            <p>Rank: Heroic</p>
-            <p>Kills: 1000+</p>
-            <p>Favorite Mode: CS Ranked</p>
+        <div class="section">
+            <h2>Holo-Timeline</h2>
+            <div class="holo-timeline">
+                <div class="timeline-line"></div>
+                <div class="timeline-item">
+                    <h3>2011</h3>
+                    <p>Born on December 31 in Delhi, India—ready to conquer the world!</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>2018</h3>
+                    <p>Discovered my love for cricket and started swinging the bat.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>2020</h3>
+                    <p>Dived into coding—HTML became my first language!</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>2023</h3>
+                    <p>Hit Heroic rank in Free Fire—1000+ kills and counting!</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>2025</h3>
+                    <p>Launched this epic bio site—watch me soar!</p>
+                </div>
+            </div>
         </div>
+
+        <button class="gaming-btn">Free Fire Stats: Heroic | 1000+ Kills | CS Ranked</button>
 
         <footer>
             <p>Crafted by Pranjal Srivastava | Fueled by Code & Dreams | © 2025</p>
@@ -362,38 +407,5 @@
             </div>
         </footer>
     </div>
-
-    <script>
-        // Optimized Neon Particles (Reduced Count)
-        const particleContainer = document.querySelector('.neon-particles');
-        for (let i = 0; i < 15; i++) { // Reduced from 25 to 15
-            const particle = document.createElement('div');
-            particle.classList.add('particle');
-            particle.style.width = `${Math.random() * 5 + 2}px`;
-            particle.style.height = particle.style.width;
-            particle.style.left = `${Math.random() * 100}vw`;
-            particle.style.top = `${Math.random() * 100}vh`;
-            particle.style.animationDelay = `${Math.random() * 5}s`;
-            particle.style.setProperty('--x', `${(Math.random() - 0.5) * 150}px`);
-            particle.style.setProperty('--y', `${(Math.random() - 0.5) * 150}px`);
-            particleContainer.appendChild(particle);
-        }
-
-        // Optimized Cricket Ball (Single Instance)
-        let ballCount = 0;
-        setInterval(() => {
-            if (ballCount < 1) { // Limit to 1 ball at a time
-                const ball = document.createElement('div');
-                ball.classList.add('cricket-ball');
-                ball.style.top = `${Math.random() * 70 + 15}vh`;
-                document.querySelector('.container').appendChild(ball);
-                ballCount++;
-                setTimeout(() => {
-                    ball.remove();
-                    ballCount--;
-                }, 4000);
-            }
-        }, 2000);
-    </script>
 </body>
 </html>
