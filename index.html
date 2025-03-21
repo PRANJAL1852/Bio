@@ -30,6 +30,31 @@
             z-index: -2;
         }
 
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: #fff;
+            border-radius: 50%;
+            box-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 255, 255, 0.5);
+            animation: twinkle 3s infinite ease-in-out;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.5); }
+        }
+
         .container {
             max-width: 1300px;
             margin: 0 auto;
@@ -181,7 +206,6 @@
             background: rgba(0, 255, 255, 0.3);
         }
 
-        /* Holo-Timeline (Original Design) */
         .holo-timeline {
             position: relative;
             padding: 20px 0;
@@ -244,7 +268,6 @@
             left: -10px;
         }
 
-        /* Gaming Stats Dropdown */
         .gaming-btn {
             position: fixed;
             bottom: 40px;
@@ -282,7 +305,6 @@
             display: block;
         }
 
-        /* Footer */
         footer {
             text-align: center;
             padding: 40px 0;
@@ -307,6 +329,7 @@
 </head>
 <body>
     <div class="cosmic-bg"></div>
+    <div class="stars"></div>
     <div class="container">
         <header>
             <div class="profile-container">
@@ -336,7 +359,7 @@
             <div class="grid">
                 <div class="card">
                     <ul class="fact-list">
-                        <li><strong>Food:</strong> Momos & Butter Chicken</li>
+                        <li><strong>Food:</strong> Momos & Butter Paneer with Naan</li>
                         <li><strong>Color:</strong> Neon Blue</li>
                         <li><strong>Movie:</strong> Lagaan</li>
                         <li><strong>Song:</strong> "Shayad" (mood-driven)</li>
@@ -385,7 +408,7 @@
         </div>
 
         <div class="section">
-            <h2>Holo-Timeline</h2>
+            <h2>💫 Holo-Timeline</h2>
             <div class="holo-timeline">
                 <div class="timeline-line"></div>
                 <div class="timeline-item">
@@ -431,6 +454,16 @@
     </div>
 
     <script>
+        const starContainer = document.querySelector('.stars');
+        for (let i = 0; i < 50; i++) {
+            const star = document.createElement('div');
+            star.classList.add('star');
+            star.style.left = `${Math.random() * 100}vw`;
+            star.style.top = `${Math.random() * 100}vh`;
+            star.style.animationDelay = `${Math.random() * 3}s`;
+            starContainer.appendChild(star);
+        }
+
         function toggleStats() {
             const stats = document.getElementById('stats');
             stats.classList.toggle('active');
