@@ -20,6 +20,54 @@
             min-height: 100vh;
         }
 
+        /* Mobile Warning Page */
+        .mobile-warning {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #ff00ff, #00ffff, #ffcc00);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .mobile-warning h1 {
+            font-size: 2em;
+            color: #000;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+            margin-bottom: 20px;
+        }
+
+        .mobile-warning p {
+            font-size: 1.2em;
+            color: #fff;
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        }
+
+        @media (max-width: 768px) {
+            .mobile-warning {
+                display: flex;
+            }
+            .main-content {
+                display: none;
+            }
+        }
+
+        /* Show content only in desktop mode or on desktop devices */
+        @media (min-width: 769px), (max-width: 768px) and (pointer: fine) {
+            .mobile-warning {
+                display: none;
+            }
+            .main-content {
+                display: block;
+            }
+        }
+
         .cosmic-bg {
             position: fixed;
             top: 0;
@@ -328,129 +376,138 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="cosmic-bg"></div>
-    <div class="stars"></div>
-    <div class="container">
-        <header>
-            <div class="profile-container">
-                <img src="https://www.dropbox.com/scl/fi/lwrzhin72cr1mc0rkigrn/IMG-20240101-WA0075.jpg?rlkey=jdnuhn1d2ip7dfqb3qgu202qe&st=0jmkfxmn&dl=1" alt="Pranjal Srivastava" class="profile-img">
-                <div class="frame"></div>
-            </div>
-            <div class="header-text">
-                <h1>Pranjal Srivastava</h1>
-                <p>Code | Cricket | Vibes</p>
-            </div>
-        </header>
-
-        <div class="section">
-            <h2>About Me</h2>
-            <div class="grid">
-                <div class="card">
-                    <p>Hey, I’m Pranjal, a 13-year-old tech wizard and cricket enthusiast from Delhi, India. Born on December 31, 2011, I’m a 9th grader obsessed with coding, gaming, and smashing boundaries—both in code and on the field!</p>
-                </div>
-                <div class="card">
-                    <p>Dreaming big: I want to be a software engineer, a pro cricketer, or maybe a hybrid of both. I live for Free Fire, music, and chilling with family. Life’s a game—let’s play it loud!</p>
-                </div>
-            </div>
+    <div class="mobile-warning">
+        <div>
+            <h1>Hey There!</h1>
+            <p>This site shines best in Desktop Mode!<br>Please switch to "Desktop Site" in your browser settings for the full cosmic experience.</p>
         </div>
+    </div>
 
-        <div class="section">
-            <h2>Favorites & Fun Facts</h2>
-            <div class="grid">
-                <div class="card">
-                    <ul class="fact-list">
-                        <li><strong>Food:</strong> Momos & Butter Paneer with Naan</li>
-                        <li><strong>Color:</strong> Neon Blue</li>
-                        <li><strong>Movie:</strong> Lagaan</li>
-                        <li><strong>Song:</strong> "Shayad" (mood-driven)</li>
-                        <li><strong>Drink:</strong> Sprite</li>
-                        <li><strong>Dessert:</strong> Rasmalai</li>
-                    </ul>
+    <div class="main-content">
+        <div class="cosmic-bg"></div>
+        <div class="stars"></div>
+        <div class="container">
+            <header>
+                <div class="profile-container">
+                    <img src="https://www.dropbox.com/scl/fi/lwrzhin72cr1mc0rkigrn/IMG-20240101-WA0075.jpg?rlkey=jdnuhn1d2ip7dfqb3qgu202qe&st=0jmkfxmn&dl=1" alt="Pranjal Srivastava" class="profile-img">
+                    <div class="frame"></div>
                 </div>
-                <div class="card">
-                    <ul class="fact-list">
-                        <li><strong>Sport:</strong> Cricket</li>
-                        <li><strong>Subject:</strong> Maths</li>
-                        <li><strong>Season:</strong> Winter</li>
-                        <li><strong>Holiday:</strong> Diwali</li>
-                        <li><strong>Animal:</strong> Cat</li>
-                        <li><strong>App:</strong> YouTube</li>
-                    </ul>
+                <div class="header-text">
+                    <h1>Pranjal Srivastava</h1>
+                    <p>Code | Cricket | Vibes</p>
+                </div>
+            </header>
+
+            <div class="section">
+                <h2>About Me</h2>
+                <div class="grid">
+                    <div class="card">
+                        <p>Hey, I’m Pranjal, a 13-year-old tech wizard and cricket enthusiast from Delhi, India. Born on December 31, 2011, I’m a 9th grader obsessed with coding, gaming, and smashing boundaries—both in code and on the field!</p>
+                    </div>
+                    <div class="card">
+                        <p>Dreaming big: I want to be a software engineer, a pro cricketer, or maybe a hybrid of both. I live for Free Fire, music, and chilling with family. Life’s a game—let’s play it loud!</p>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="section">
-            <h2>My Vibes</h2>
-            <div class="grid">
-                <div class="card">
-                    <p><strong>Proudest Wins:</strong> Coding projects & cricket shots</p>
-                    <p><strong>Dream Spot:</strong> Japan (tech heaven!)</p>
-                    <p><strong>Secret Skills:</strong> Code mastery & cricket flair</p>
-                </div>
-                <div class="card">
-                    <p><strong>Epic Memory:</strong> Nepal family adventure</p>
-                    <p><strong>Next Goal:</strong> Master life’s cheat codes</p>
-                    <p><strong>Big Vision:</strong> A kinder, cooler world</p>
+            <div class="section">
+                <h2>Favorites & Fun Facts</h2>
+                <div class="grid">
+                    <div class="card">
+                        <ul class="fact-list">
+                            <li><strong>Food:</strong> Momos & Butter Paneer with Naan</li>
+                            <li><strong>Color:</strong> Neon Blue</li>
+                            <li><strong>Movie:</strong> Lagaan</li>
+                            <li><strong>Song:</strong> "Shayad" (mood-driven)</li>
+                            <li><strong>Drink:</strong> Sprite</li>
+                            <li><strong>Dessert:</strong> Rasmalai</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <ul class="fact-list">
+                            <li><strong>Sport:</strong> Cricket</li>
+                            <li><strong>Subject:</strong> Maths</li>
+                            <li><strong>Season:</strong> Winter</li>
+                            <li><strong>Holiday:</strong> Diwali</li>
+                            <li><strong>Animal:</strong> Cat</li>
+                            <li><strong>App:</strong> YouTube</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="section">
-            <h2>Skill Arsenal</h2>
-            <div class="skills-grid">
-                <div class="skill-card">Coding (HTML, CSS, JS)</div>
-                <div class="skill-card">Cricket (Batting & Bowling)</div>
-                <div class="skill-card">Gaming (Free Fire Pro)</div>
-                <div class="skill-card">Problem Solving (Maths)</div>
-                <div class="skill-card">Team Spirit</div>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2>💫 Holo-Timeline</h2>
-            <div class="holo-timeline">
-                <div class="timeline-line"></div>
-                <div class="timeline-item">
-                    <h3>2011</h3>
-                    <p>Born on December 31 in Delhi, India—ready to conquer the world!</p>
-                </div>
-                <div class="timeline-item">
-                    <h3>2021</h3>
-                    <p>Started my Free Fire journey—hit Heroic rank later!</p>
-                </div>
-                <div class="timeline-item">
-                    <h3>2022</h3>
-                    <p>Dived into coding—HTML became my first language!</p>
-                </div>
-                <div class="timeline-item">
-                    <h3>2023</h3>
-                    <p>Epic Nepal family trip—unforgettable memories!</p>
-                </div>
-                <div class="timeline-item">
-                    <h3>2024</h3>
-                    <p>Discovered my love for cricket—swinging the bat like a pro!</p>
-                </div>
-                <div class="timeline-item">
-                    <h3>2025</h3>
-                    <p>Launched this epic bio site—watch me soar!</p>
+            <div class="section">
+                <h2>My Vibes</h2>
+                <div class="grid">
+                    <div class="card">
+                        <p><strong>Proudest Wins:</strong> Coding projects & cricket shots</p>
+                        <p><strong>Dream Spot:</strong> Japan (tech heaven!)</p>
+                        <p><strong>Secret Skills:</strong> Code mastery & cricket flair</p>
+                    </div>
+                    <div class="card">
+                        <p><strong>Epic Memory:</strong> Nepal family adventure</p>
+                        <p><strong>Next Goal:</strong> Master life’s cheat codes</p>
+                        <p><strong>Big Vision:</strong> A kinder, cooler world</p>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <button class="gaming-btn" onclick="toggleStats()">Gaming Stats</button>
-        <div class="gaming-stats" id="stats">
-            <p>Rank: Heroic</p>
-            <p>Kills: 1000+</p>
-            <p>Favorite Mode: CS Ranked</p>
-        </div>
-
-        <footer>
-            <p>Crafted by Pranjal Srivastava | Fueled by Code & Dreams | © 2025</p>
-            <div class="social-links">
-                <a href="https://www.instagram.com/pranjal_srivastava143?igsh=MTljZ3IxNmd5Z3U3dw==" target="_blank">Instagram</a>
+            <div class="section">
+                <h2>Skill Arsenal</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">Coding (HTML, CSS, JS)</div>
+                    <div class="skill-card">Cricket (Batting & Bowling)</div>
+                    <div class="skill-card">Gaming (Free Fire Pro)</div>
+                    <div class="skill-card">Problem Solving (Maths)</div>
+                    <div class="skill-card">Team Spirit</div>
+                </div>
             </div>
-        </footer>
+
+            <div class="section">
+                <h2>💫 Holo-Timeline</h2>
+                <div class="holo-timeline">
+                    <div class="timeline-line"></div>
+                    <div class="timeline-item">
+                        <h3>2011</h3>
+                        <p>Born on December 31 in Delhi, India—ready to conquer the world!</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>2021</h3>
+                        <p>Started my Free Fire journey—hit Heroic rank later!</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>2022</h3>
+                        <p>Dived into coding—HTML became my first language!</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>2023</h3>
+                        <p>Epic Nepal family trip—unforgettable memories!</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>2024</h3>
+                        <p>Discovered my love for cricket—swinging the bat like a pro!</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>2025</h3>
+                        <p>Launched this epic bio site—watch me soar!</p>
+                    </div>
+                </div>
+            </div>
+
+            <button class="gaming-btn" onclick="toggleStats()">Gaming Stats</button>
+            <div class="gaming-stats" id="stats">
+                <p>Rank: Heroic</p>
+                <p>Kills: 1000+</p>
+                <p>Favorite Mode: CS Ranked</p>
+            </div>
+
+            <footer>
+                <p>Crafted by Pranjal Srivastava | Fueled by Code & Dreams | © 2025</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/pranjal_srivastava143?igsh=MTljZ3IxNmd5Z3U3dw==" target="_blank">Instagram</a>
+                </div>
+            </footer>
+        </div>
     </div>
 
     <script>
@@ -468,6 +525,25 @@
             const stats = document.getElementById('stats');
             stats.classList.toggle('active');
         }
+
+        // JavaScript to enhance mobile detection
+        function checkDevice() {
+            const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+            const isSmallScreen = window.innerWidth <= 768;
+            const mainContent = document.querySelector('.main-content');
+            const mobileWarning = document.querySelector('.mobile-warning');
+
+            if (isMobile && isSmallScreen && !window.matchMedia('(pointer: fine)').matches) {
+                mainContent.style.display = 'none';
+                mobileWarning.style.display = 'flex';
+            } else {
+                mainContent.style.display = 'block';
+                mobileWarning.style.display = 'none';
+            }
+        }
+
+        window.addEventListener('load', checkDevice);
+        window.addEventListener('resize', checkDevice);
     </script>
 </body>
-</html>
+    </html>
